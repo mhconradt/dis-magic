@@ -13,13 +13,18 @@ To automatically load, add the following to your [IPython configuration file](ht
     
 ## Usage
 
-Verifying Python follows PEMDAS:
+A basic example:
 
-    In [6]: %dis foo = 6 ** 2 + 6
+    In [34]: %dis foo = 0b101010; print(foo);
       1           0 LOAD_CONST               0 (42)
                   2 STORE_NAME               0 (foo)
-                  4 LOAD_CONST               1 (None)
-                  6 RETURN_VALUE
+                  4 LOAD_NAME                1 (print)
+                  6 LOAD_NAME                0 (foo)
+                  8 CALL_FUNCTION            1
+                 10 POP_TOP
+                 12 LOAD_CONST               1 (None)
+                 14 RETURN_VALUE
+    42
         
 You can use it in a cell too:
 
